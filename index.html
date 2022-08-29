@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/style-fondo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Raleway:wght@400;500;700;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="animated-background">
+    <div class="leaf leaf1">
+      <div><img src="assets/hoja01.png" alt=""></div>
+      <div><img src="assets/hoja01.png" alt=""></div>
+      <div><img src="assets/hoja02.png" alt=""></div>
+      <div><img src="assets/hoja04.png" alt=""></div>
+      <div><img src="assets/hoja03.png" alt=""></div>
+      <div><img src="assets/hoja04.png" alt=""></div>
+      <div><img src="assets/hoja05.png" alt=""></div>
+      <div><img src="assets/hoja06.png" alt=""></div>
+    </div>
+    <div class="leaf leaf2">
+      <div><img src="assets/hoja05.png" alt=""></div>
+      <div><img src="assets/hoja04.png" alt=""></div>
+      <div><img src="assets/hoja02.png" alt=""></div>
+      <div><img src="assets/hoja01.png" alt=""></div>
+      <div><img src="assets/hoja03.png" alt=""></div>
+      <div><img src="assets/hoja06.png" alt=""></div>
+      <div><img src="assets/hoja03.png" alt=""></div>
+      <div><img src="assets/hoja04.png" alt=""></div>
+    </div>
+  </div>
+  <div class="form-name-container flx-center is-active">
+    <form id="form-name" class="form-name flx flx-c">
+      <label for="person" class="lab-name">¿Cúal es tu nombre?</label>
+      <input type="text" name="name" id="person" placeholder="Nombre..."
+        title="Nombre solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" autocomplete="off"
+        required>
+      <input type="submit" value="Siguiente">
+    </form>
+  </div>
+  <header class="header">
+    <div class="header-container container flx flx-c">
+      <h3 id="date"></h3>
+      <h1 id="title"></h1>
+      <figure class="image">
+      </figure>
+      <h3 class="phrase">
+      </h3>
+      <h4>Vamos a cumplir tus metas</h4>
+    </div>
+  </header>
+  <main class="main">
+    <div class="main-container container">
+      <form class="form-list flx flx-r">
+        <input type="text" name="list" id="list" placeholder="Agregar una nota.." autocomplete="off" required>
+        <button class="icon-add  flx flx-r flx-center">
+          <div class="icon-add-container flx flx-r flx-center">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M8 0C7.82427 0 7.6498 0.00567341 7.47676 0.0168556L7.54125 1.01477C7.69284 1.00498 7.8458 1 8 1C8.1542 1 8.30716 1.00498 8.45875 1.01477L8.52324 0.0168556C8.3502 0.00567344 8.17573 0 8 0Z"
+                fill="#08988F" />
+              <path
+                d="M6.43925 0.152261C6.09355 0.220651 5.75582 0.311314 5.42763 0.422694L5.74901 1.36965C6.03585 1.2723 6.33106 1.19304 6.63332 1.13325L6.43925 0.152261Z"
+                fill="#08988F" />
+              <path
+                d="M10.5724 0.422694C10.2442 0.311314 9.90645 0.220651 9.56075 0.152262L9.36668 1.13325C9.66894 1.19304 9.96415 1.2723 10.251 1.36965L10.5724 0.422694Z"
+                fill="#08988F" />
+              <path
+                d="M12.4453 1.34778C12.1561 1.1542 11.8536 0.978938 11.5394 0.823676L11.0964 1.72021C11.3712 1.856 11.6359 2.00932 11.889 2.17874L12.4453 1.34778Z"
+                fill="#08988F" />
+              <path
+                d="M4.46063 0.823676C4.14639 0.978938 3.84387 1.1542 3.55472 1.34778L4.11104 2.17874C4.36411 2.00932 4.62878 1.856 4.9036 1.72021L4.46063 0.823676Z"
+                fill="#08988F" />
+              <path
+                d="M2.72505 1.98531C2.46271 2.21556 2.21556 2.46271 1.98531 2.72505L2.73689 3.38469C2.93852 3.15496 3.15496 2.93852 3.38469 2.73689L2.72505 1.98531Z"
+                fill="#08988F" />
+              <path
+                d="M14.0147 2.72505C13.7844 2.46271 13.5373 2.21556 13.275 1.98531L12.6153 2.73689C12.845 2.93852 13.0615 3.15496 13.2631 3.38469L14.0147 2.72505Z"
+                fill="#08988F" />
+              <path
+                d="M15.1763 4.46063C15.0211 4.14639 14.8458 3.84387 14.6522 3.55472L13.8213 4.11104C13.9907 4.36411 14.144 4.62878 14.2798 4.9036L15.1763 4.46063Z"
+                fill="#08988F" />
+              <path
+                d="M1.34778 3.55472C1.1542 3.84387 0.978938 4.14639 0.823676 4.46063L1.72021 4.9036C1.856 4.62878 2.00932 4.36411 2.17874 4.11104L1.34778 3.55472Z"
+                fill="#08988F" />
+              <path
+                d="M0.422694 5.42763C0.311314 5.75582 0.220651 6.09355 0.152262 6.43925L1.13325 6.63332C1.19304 6.33106 1.2723 6.03585 1.36965 5.74901L0.422694 5.42763Z"
+                fill="#08988F" />
+              <path
+                d="M15.8477 6.43925C15.7793 6.09355 15.6887 5.75582 15.5773 5.42763L14.6304 5.74901C14.7277 6.03585 14.807 6.33106 14.8668 6.63332L15.8477 6.43925Z"
+                fill="#08988F" />
+              <path
+                d="M0.0168556 7.47676C0.00567344 7.6498 0 7.82427 0 8C0 8.17573 0.00567341 8.3502 0.0168556 8.52324L1.01477 8.45875C1.00498 8.30716 1 8.1542 1 8C1 7.8458 1.00498 7.69284 1.01477 7.54125L0.0168556 7.47676Z"
+                fill="#08988F" />
+              <path
+                d="M16 8C16 7.82427 15.9943 7.6498 15.9831 7.47676L14.9852 7.54125C14.995 7.69284 15 7.8458 15 8C15 8.1542 14.995 8.30716 14.9852 8.45875L15.9831 8.52324C15.9943 8.3502 16 8.17573 16 8Z"
+                fill="#08988F" />
+              <path
+                d="M0.152261 9.56075C0.220651 9.90645 0.311314 10.2442 0.422694 10.5724L1.36965 10.251C1.2723 9.96415 1.19304 9.66894 1.13325 9.36668L0.152261 9.56075Z"
+                fill="#08988F" />
+              <path
+                d="M15.5773 10.5724C15.6887 10.2442 15.7793 9.90645 15.8477 9.56075L14.8668 9.36668C14.807 9.66894 14.7277 9.96415 14.6304 10.251L15.5773 10.5724Z"
+                fill="#08988F" />
+              <path
+                d="M0.823676 11.5394C0.978938 11.8536 1.1542 12.1561 1.34778 12.4453L2.17874 11.889C2.00932 11.6359 1.856 11.3712 1.72021 11.0964L0.823676 11.5394Z"
+                fill="#08988F" />
+              <path
+                d="M14.6522 12.4453C14.8458 12.1561 15.0211 11.8536 15.1763 11.5394L14.2798 11.0964C14.144 11.3712 13.9907 11.6359 13.8213 11.889L14.6522 12.4453Z"
+                fill="#08988F" />
+              <path
+                d="M1.98531 13.275C2.21556 13.5373 2.46271 13.7844 2.72505 14.0147L3.38469 13.2631C3.15496 13.0615 2.93852 12.845 2.73689 12.6153L1.98531 13.275Z"
+                fill="#08988F" />
+              <path
+                d="M13.275 14.0147C13.5373 13.7844 13.7844 13.5373 14.0147 13.275L13.2631 12.6153C13.0615 12.845 12.845 13.0615 12.6153 13.2631L13.275 14.0147Z"
+                fill="#08988F" />
+              <path
+                d="M11.5394 15.1763C11.8536 15.0211 12.1561 14.8458 12.4453 14.6522L11.889 13.8213C11.6359 13.9907 11.3712 14.144 11.0964 14.2798L11.5394 15.1763Z"
+                fill="#08988F" />
+              <path
+                d="M3.55472 14.6522C3.84387 14.8458 4.14639 15.0211 4.46063 15.1763L4.9036 14.2798C4.62878 14.144 4.36411 13.9907 4.11104 13.8213L3.55472 14.6522Z"
+                fill="#08988F" />
+              <path
+                d="M5.42763 15.5773C5.75582 15.6887 6.09355 15.7793 6.43925 15.8477L6.63332 14.8668C6.33106 14.807 6.03585 14.7277 5.74901 14.6304L5.42763 15.5773Z"
+                fill="#08988F" />
+              <path
+                d="M9.56075 15.8477C9.90645 15.7793 10.2442 15.6887 10.5724 15.5773L10.251 14.6304C9.96415 14.7277 9.66894 14.807 9.36668 14.8668L9.56075 15.8477Z"
+                fill="#08988F" />
+              <path
+                d="M7.47676 15.9831C7.6498 15.9943 7.82427 16 8 16C8.17573 16 8.3502 15.9943 8.52324 15.9831L8.45875 14.9852C8.30716 14.995 8.1542 15 8 15C7.8458 15 7.69284 14.995 7.54125 14.9852L7.47676 15.9831Z"
+                fill="#08988F" />
+              <path
+                d="M8.5 4.5C8.5 4.22386 8.27614 4 8 4C7.72386 4 7.5 4.22386 7.5 4.5V7.5H4.5C4.22386 7.5 4 7.72386 4 8C4 8.27614 4.22386 8.5 4.5 8.5H7.5V11.5C7.5 11.7761 7.72386 12 8 12C8.27614 12 8.5 11.7761 8.5 11.5V8.5H11.5C11.7761 8.5 12 8.27614 12 8C12 7.72386 11.7761 7.5 11.5 7.5H8.5V4.5Z"
+                fill="#08988F" />
+            </svg>
+          </div>
+        </button>
+      </form>
+      <article>
+        <h2 class="crud-title">Estas son tus tareas pendientes</h2>
+        <section id="crud-section" class="flx flx-c flx-center">
+          <div class="list list-example flx flx-r">
+            <button class="btn-check p-relative flx-center">
+              <div class="icon-no-check flx-center">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="8" cy="8" r="7.5" fill="#D9D9D9" fill-opacity="0.01" stroke="#08988F" />
+                </svg>
+              </div>
+              <div class="icon-check flx-center none">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM12.0303 4.96967C11.7374 4.67678 11.2626 4.67678 10.9697 4.96967C10.9626 4.97674 10.9559 4.98424 10.9498 4.9921L7.4774 9.41674L5.38388 7.32322C5.09098 7.03033 4.61611 7.03033 4.32322 7.32322C4.03032 7.61612 4.03032 8.09099 4.32322 8.38388L6.96966 11.0303C7.26256 11.3232 7.73743 11.3232 8.03032 11.0303C8.03685 11.0238 8.043 11.0169 8.04876 11.0097L12.041 6.01947C12.3232 5.72582 12.3196 5.25897 12.0303 4.96967Z"
+                    fill="#08988F" />
+                </svg>
+              </div>
+              <div class="btn-check-fill p-absolute"></div>
+            </button>
+            <div class="list-mensaje"></div>
+            <button class="btn-delete p-relative flx-center">
+              <div class="icon-delete flx-center">
+                <svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1 1C0.447715 1 0 1.44772 0 2V3C0 3.55228 0.447715 4 1 4H1.5V13C1.5 14.1046 2.39543 15 3.5 15H9.5C10.6046 15 11.5 14.1046 11.5 13V4H12C12.5523 4 13 3.55228 13 3V2C13 1.44772 12.5523 1 12 1H8.5C8.5 0.447715 8.05229 0 7.5 0H5.5C4.94772 0 4.5 0.447715 4.5 1H1ZM4 5C4.27614 5 4.5 5.22386 4.5 5.5V12.5C4.5 12.7761 4.27614 13 4 13C3.72386 13 3.5 12.7761 3.5 12.5L3.5 5.5C3.5 5.22386 3.72386 5 4 5ZM6.5 5C6.77614 5 7 5.22386 7 5.5V12.5C7 12.7761 6.77614 13 6.5 13C6.22386 13 6 12.7761 6 12.5V5.5C6 5.22386 6.22386 5 6.5 5ZM9.5 5.5V12.5C9.5 12.7761 9.27614 13 9 13C8.72386 13 8.5 12.7761 8.5 12.5V5.5C8.5 5.22386 8.72386 5 9 5C9.27614 5 9.5 5.22386 9.5 5.5Z"
+                    fill="#08988F" />
+                </svg>
+              </div>
+              <div class="btn-delete-fill p-absolute"></div>
+            </button>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
