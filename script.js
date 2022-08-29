@@ -23,7 +23,6 @@ function titleEdit() {
 const formValidation = () => {
   const $formName = d.querySelector(".form-name-container");
   $formName.classList.remove("is-active");
-  d.body.style.overflowY = "hidden"
 
   const $inputs = d.querySelectorAll(".form-name [required]");
   $inputs.forEach((input) => {
@@ -52,9 +51,7 @@ const formValidation = () => {
     e.preventDefault();
     ls.setItem("user", capitalizarPrimeraLetra(d.getElementById("person").value));
     $formName.classList.add("is-active");
-    d.body.style.overflowY = " ";
     titleEdit();
-    location.reload();
   });
 }
 
@@ -207,7 +204,21 @@ let listPhrase = [
   "Si te caes siete veces, levántate ocho",
   "Si puedes soñarlo, puedes hacerlo ",
   "La vida es como montar en bicicleta. para mantener el equilibrio tienes que avanzar ",
-  "El éxito es la suma de pequeños esfuerzos, que se repiten día tras día"
+  "El éxito es la suma de pequeños esfuerzos, que se repiten día tras día",
+  "La forma más rápida de cambiar es convivir con personas que ya son como quieres ser",
+  "La felicidad no es algo que pospones para el futuro; es algo que diseñas para el presente",
+  "Vive la vida que amas. Ama la vida que vives",
+  "Trabajar duro por algo que no te importa se llama estrés. Trabajar duro por algo que te importa de verdad se llama pasión",
+  "El fracaso se convierte en éxito si aprendes de él",
+  "Todos nuestros sueños se pueden volver realidad si tenemos el coraje de perseguirlos",
+  "Nuestra mayor debilidad reside en rendirnos. La forma más segura de tener éxito es intentarlo una vez más",
+  "No es el más fuerte de las especies el que sobrevive, tampoco es el más inteligente el que sobrevive. Es aquel que es más adaptable al cambio",
+  "Nos detuvimos en busca de monstruos debajo de la cama cuando nos dimos cuenta de que estaban dentro de nosotros",
+  "Un mono americano, después de emborracharse de brandy, nunca más lo tocaría, y esto es mucho más sabio de lo que harían la mayoría de hombres",
+  "La mente humana evolucionó para creer en los dioses. No evolucionó para creer en la biología",
+  "El genio se hace con un 1% de talento, y un 99% de trabajo",
+  "Los errores no son fracasos, son señal de que lo estamos intentando",
+  "Trabaja duro en silencio y deja que tu éxito haga todo el ruido"
 ]
 
 const draw = () => {
@@ -216,6 +227,13 @@ const draw = () => {
     winner = listPhrase[random];
 
   $phrase.textContent = `"${winner}"`;
+  console.log(random);
+}
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js')
+    .then(reg => console.log('Registro de SW exitoso', reg))
+    .catch(err => console.warn('Error al tratar de registrar el SW', err));
 }
 
 if ('serviceWorker' in navigator) {

@@ -18,7 +18,7 @@
 
 .leaf div {
   height: auto;
-  animation: animation 18s linear infinite both;
+  animation: animation 15s linear infinite both;
 }
 
 
@@ -68,7 +68,7 @@
 .leaf1 div:nth-child(6) {
   width: 12vw;
   max-width: 72px;
-  animation-delay: 4s;
+  animation-delay: 8s;
 }
 
 .leaf1 div:nth-child(7) {
@@ -98,7 +98,7 @@
 .leaf2 div:nth-child(3) {
   width: 12vw;
   max-width: 76px;
-  animation-delay: 2s;
+  animation-delay: 4s;
 }
 
 .leaf2 div:nth-child(4) {
@@ -116,7 +116,7 @@
 .leaf2 div:nth-child(6) {
   width: 12vw;
   max-width: 72px;
-  animation-delay: 6s;
+  animation-delay: 8s;
 }
 
 .leaf2 div:nth-child(7) {
