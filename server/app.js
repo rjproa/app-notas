@@ -2,8 +2,10 @@ const config = require('./utils/config')
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const cookieParser = require('cookie-parser')
 const userRouter = require('./controllers/user')
 const mongoose = require('mongoose')
+const loginRouter = require('./controllers/login')
 
 mongoose.set('strictQuery', false)
 console.log('Conectando a: ', config.MONGODB_URI);
@@ -17,8 +19,14 @@ mongoose.connect(config.MONGODB_URI)
   })
 
 
-app.use(cors())
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true
+}))
+
 app.use(express.json())
+app.use(cookieParser())
+app.use('/login', loginRouter)
 app.use('/api/users', userRouter)
 
 module.exports = app
