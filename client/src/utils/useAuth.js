@@ -14,7 +14,7 @@ export const useAuth = () => {
         setUser(userData)
 
       } catch (error) {
-        console.log(error);
+        // console.log(error);
         setUser(null)
         navigate('/login', { replace: true })
       } finally {

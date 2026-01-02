@@ -16,7 +16,6 @@ const authService = {
           const retryResponse = await axios.get(`${base_url}/login/verify`)
           return retryResponse.data
         } catch (refreshError) {
-          console.log(refreshError);
         }
       }
       throw error

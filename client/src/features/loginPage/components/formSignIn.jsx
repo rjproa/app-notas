@@ -25,7 +25,7 @@ export default function SignIn({ onRegister }) {
       await authService.login(formData.username, formData.password)
       navigate('/dashboard', { replace: true })
     } catch (error) {
-      console.log(error);
+      alert('Error al iniciar sesión: ' + error.response.data.error)
     }
   };
 
