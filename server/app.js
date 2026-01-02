@@ -6,6 +6,9 @@ const cookieParser = require('cookie-parser')
 const userRouter = require('./controllers/user')
 const mongoose = require('mongoose')
 const loginRouter = require('./controllers/login')
+const allowedOrigin = process.env.NODE_ENV === 'production'
+  ? 'https://miorganizador.vercel.app'
+  : 'http://localhost:5173'
 
 mongoose.set('strictQuery', false)
 console.log('Conectando a: ', config.MONGODB_URI);
@@ -20,7 +23,7 @@ mongoose.connect(config.MONGODB_URI)
 
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: allowedOrigin,
   credentials: true
 }))
 
