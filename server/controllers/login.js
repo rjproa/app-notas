@@ -5,6 +5,13 @@ const generateTokens = require('./helpers/generateTokens.js')
 const authMiddleware = require('../middlewares/authMiddleware.js')
 const jwt = require('jsonwebtoken')
 
+const cookieOptions = {
+  httpOnly: true,
+  secure: process.env.NODE_ENV === 'production',
+  sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+  path: '/'
+}
+
 loginRouter.post('/', async (req, res) => {
   const { username, password } = req.body
 
@@ -21,16 +28,12 @@ loginRouter.post('/', async (req, res) => {
     const { accessToken, refreshToken } = generateTokens(user)
 
     res.cookie('accessToken', accessToken, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
+      ...cookieOptions,
       maxAge: 15 * 60 * 1000
     })
 
     res.cookie('refreshToken', refreshToken, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
+      ...cookieOptions,
       maxAge: 7 * 24 * 60 * 60 * 1000
     })
 
@@ -49,8 +52,8 @@ loginRouter.post('/', async (req, res) => {
 })
 
 loginRouter.post('/logout', async (req, res) => {
-  res.clearCookie('accessToken')
-  res.clearCookie('refreshToken')
+  res.clearCookie('accessToken', cookieOptions)
+  res.clearCookie('refreshToken', cookieOptions)
   res.status(200).json({ message: 'Logout Exitoso' })
 })
 
@@ -92,17 +95,15 @@ loginRouter.post('/refresh', async (req, res) => {
     const { accessToken } = generateTokens(user)
 
     res.cookie('accessToken', accessToken, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
+      ...cookieOptions,
       maxAge: 15 * 60 * 1000
     })
 
     res.status(200).json({ message: 'Token refrescado' })
 
   } catch (error) {
-    res.clearCookie('accessToken')
-    res.clearCookie('refreshToken')
+    res.clearCookie('accessToken', cookieOptions)
+    res.clearCookie('refreshToken', cookieOptions)
     return res.status(401).json({ error: 'Token inválido' })
   }
 })
