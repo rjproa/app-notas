@@ -4,7 +4,6 @@ import TaskItem from './components/TaskItem';
 import ItemModal from './components/ItemModal'
 import BtnAddItem from './components/BtnAddItem'
 import BtnAddGroup from './components/BtnAddGroup'
-import GroupSkeleton from './components/GroupSkeleton'
 
 export default function TaskGroups({ userId }) {
 
@@ -245,11 +244,14 @@ export default function TaskGroups({ userId }) {
 
       <div className="pt-[64px] max-w-6xl mx-auto">
         {groups.length === 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[1, 2, 3, 4].map(i => (
-              <GroupSkeleton key={i} />
-            ))}
-          </div>
+          <>
+            <h3 className="text-center text-xl md:text-2xl font-semibold text-[#1C5A33] mt-20">
+              🗂️ Aún no tienes grupos ni tareas creados
+            </h3>
+            <p className="text-center text-sm text-[#267D48] opacity-60 mt-2">
+              Empieza creando tu primer grupo
+            </p>
+          </>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {groups.map(group => {
@@ -323,7 +325,15 @@ export default function TaskGroups({ userId }) {
         )}
       </div>
 
-      <BtnAddGroup setShowCreateGroup={() => setShowCreateGroup(true)} />
+      <BtnAddGroup
+        setShowCreateGroup={() => setShowCreateGroup(true)}
+        position={
+          groups.length === 0
+            ? 'bottom-[15vh] left-1/2 -translate-x-1/2'
+            : 'bottom-8 right-8'
+        }
+      />
+
 
       <ItemModal
         isOpen={showCreateItem !== null}
